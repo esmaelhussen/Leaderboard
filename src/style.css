@@ -84,3 +84,12 @@ li{
     justify-content: space-between;
     font-weight: bold;
 }
+
+.copy {
+   display: flex;
+   justify-content: center;
+   font-weight: bold;
+  }
+  
+ 
+  
