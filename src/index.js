@@ -1,7 +1,6 @@
 import _ from 'lodash';
 import './style.css';
-import renderScores from './renderScores.js';
-import addScore from './addScore.js';
+import { renderScores, addScore } from './function.js';
 
 const scores = [];
 
