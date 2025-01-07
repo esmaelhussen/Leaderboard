@@ -23,23 +23,36 @@ body{
     justify-content: center;
 }
 
-.subtitle{
-    padding-left: 2.5rem;
+.head{
     display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
+    padding-bottom: 2rem;
 }
 
 button{
-    border: 2px solid black;
-    box-shadow: 2px 4px 0px black;
+    padding: 0.5rem 2rem;
+    border-radius: 10rem;
+    background:  #4064df;
+    color: white;
 }
 
-#refresh{
+.btn-refresh,.btn-submit{
     border: 2px solid black;
     font-weight: bold;
-    height: 1.5rem;
+    font-weight: bold;
 }
+
+.btn-submit{
+    margin: 1.5rem 100%;
+}
+
+.btn-refresh{
+    margin-left: 3rem;
+}
+
+.btn:hover {
+    transform: translateY(-0.3rem);
+    box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.2);
+  }
 
 .sub{
     padding-left: 2rem;
@@ -59,23 +72,19 @@ button{
 
 input{
     padding: 1rem;
-    border: 2px solid #000;
+    border: 2px solid #0429a9;
     border-radius: 5px;
+    width: 130%;
 }
 
-#submit{
-    margin-top: 1rem;
-    margin-left: 13rem;
-}
-
-#scores-list{
-    flex-basis: 100%; 
+.scores{
+    flex-basis: 50%; 
     list-style: none;
-    border: 3px solid black;
+    border: 3px solid #0429a9;;
 }
 
-#scores-list li:nth-child(odd){
-    background-color: #d0d0d0;
+.scores li:nth-child(odd){
+    background-color: #4064df;;
 }
 
 li{
@@ -85,7 +94,7 @@ li{
     font-weight: bold;
 }
 
-.copy {
+footer {
    display: flex;
    justify-content: center;
    font-weight: bold;
