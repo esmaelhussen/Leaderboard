@@ -26,8 +26,8 @@ document.getElementById('refresh').addEventListener('click', () => {
 
 document.getElementById('submit').addEventListener('click', () => {
   const name = document.getElementById('name').value;
-  const score = document.getElementById('score').value;
-  addScore(name, parseInt(score, 10), scores);
+  const score = parseInt(document.getElementById('score').value, 10);
+  addScore(name, score, scores);
   document.getElementById('name').value = '';
   document.getElementById('score').value = '';
 });
