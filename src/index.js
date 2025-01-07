@@ -1,33 +1,30 @@
-import _ from 'lodash';
+import { postGame, getGame } from './function.js';
 import './style.css';
 
-const scores = [];
+const allScore = document.querySelector('.scores');
+const nameone = document.querySelector('.name');
+const scoreone = document.querySelector('.score');
+const submitButon = document.querySelector('.btn-submit');
+const refreshButon = document.querySelector('.btn-refresh');
 
-const addScore = (name, score, scores) => {
-  if (name && score) {
-    scores.push({ name, score });
-  }
+const addScore = async (event) => {
+  event.preventDefault();
+  await postGame({ user: nameone.value, score: +scoreone.value });
+  nameone.value = '';
+  scoreone.value = '';
 };
 
-const renderScores = (scores) => {
-  const scoresList = document.getElementById('scores-list');
-  scoresList.innerHTML = '';
-  scores.forEach((score) => {
-    const li = document.createElement('li');
-    li.textContent = `${score.name}: ${score.score}`;
-    li.classList.add('score-item');
-    scoresList.appendChild(li);
+const renderScores = async () => {
+  const scores = await getGame();
+  allScore.innerHTML = '';
+  scores.forEach(({ user, score }) => {
+    allScore.innerHTML += `<li class="score__list">${user} : ${score}</li>`;
   });
 };
 
-document.getElementById('refresh').addEventListener('click', () => {
-  renderScores(scores);
+document.addEventListener('DOMContentLoaded', () => {
+  renderScores();
 });
 
-document.getElementById('submit').addEventListener('click', () => {
-  const name = document.getElementById('name').value;
-  const score = parseInt(document.getElementById('score').value, 10);
-  addScore(name, score, scores);
-  document.getElementById('name').value = '';
-  document.getElementById('score').value = '';
-});
+submitButon.addEventListener('click', addScore);
+refreshButon.addEventListener('click', renderScores);
