@@ -31,7 +31,7 @@
     "webpack-dev-middleware": "^7.4.2",
     "webpack-dev-server": "^5.2.0"
   },
-  "homepage": "https://esmaelhussen.github.io/To-do-list",
+  "homepage": "https://esmaelhussen.github.io/leaderboard",
   "dependencies": {
     "lodash": "^4.17.21"
   }
