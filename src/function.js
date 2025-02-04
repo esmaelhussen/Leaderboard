@@ -1,5 +1,5 @@
 const API_URL =
-  "https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/ KNupmnCZz49JFSVJgwYr/scores/";
+  "https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/JDD1oYSqgnmK1ECpkiFN/scores/";
 
 export const getGame = async () => {
   const fetchGame = await fetch(API_URL);
@@ -18,7 +18,7 @@ export const postGame = async (score) => {
 };
 
 /*
-//post method for creating a game
+post method for creating a game
 
 const creategame = async () => {
   const url =
